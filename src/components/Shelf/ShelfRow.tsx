@@ -10,7 +10,7 @@ interface ShelfCtx {
 export const ShelfHoverContext = createContext<ShelfCtx>({ dvdHovered: false, setDvdHovered: () => {}, touchHoveredId: null });
 export function useShelfHover() { return useContext(ShelfHoverContext); }
 
-export default function ShelfRow({ children, rowIndex = 0 }: { children: ReactNode; rowIndex?: number }) {
+export default function ShelfRow({ children, rowIndex: _rowIndex = 0 }: { children: ReactNode; rowIndex?: number }) {
   const [dvdHovered, setDvdHovered] = useState(false);
   const [touchHoveredId, setTouchHoveredId] = useState<string | null>(null);
 
