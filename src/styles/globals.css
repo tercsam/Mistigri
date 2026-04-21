@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+:root {
+  --bg-cream: #faf8f4; --bg-white: #ffffff; --bg-warm: #f3efe8;
+  --bg-header: rgba(250,248,244,0.92);
+  --text-primary: #1a1a1a; --text-secondary: #7a7672; --text-light: #a09a93;
+  --accent-red: #c41e3a; --accent-red-hover: #a8182f; --accent-red-light: rgba(196,30,58,0.08);
+  --accent-gold: #b8860b; --accent-gold-light: rgba(184,134,11,0.1);
+  --color-success: #16a34a; --color-success-light: rgba(22,163,74,0.08); --color-error: #dc2626;
+  --border-light: #e8e4de; --border-lighter: #f0ece6;
+  --font-display: 'Playfair Display','Georgia',serif; --font-body: 'DM Sans','Helvetica Neue',Arial,sans-serif;
+  --dvd-spine-width: 30px; --dvd-height: 200px; --dvd-cover-width: 140px;
+}
+[data-theme="dark"] {
+  --bg-cream: #121018; --bg-white: #1a1622; --bg-warm: #221e2a;
+  --bg-header: rgba(18,16,24,0.92);
+  --text-primary: #e8e4de; --text-secondary: #9a9498; --text-light: #6a6468;
+  --accent-red: #e84060; --accent-red-hover: #d03050; --accent-red-light: rgba(232,64,96,0.12);
+  --accent-gold: #d4a030; --accent-gold-light: rgba(212,160,48,0.12);
+  --color-success: #34d472; --color-success-light: rgba(52,212,114,0.12); --color-error: #f04040;
+  --border-light: #2a2632; --border-lighter: #222030;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;padding:0;background:var(--bg-cream);color:var(--text-primary);font-family:var(--font-body);overflow-x:hidden;-webkit-font-smoothing:antialiased;transition:background 400ms ease,color 400ms ease}
+#root{min-height:100vh}
+::selection{background:var(--accent-red);color:white}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg-cream)}::-webkit-scrollbar-thumb{background:var(--border-light);border-radius:3px}
+html{scrollbar-color:var(--border-light) var(--bg-cream);scrollbar-width:thin}
+.brush-shape-1{border-radius:30% 70% 70% 30%/30% 30% 70% 70%}
+.brush-shape-2{border-radius:60% 40% 30% 70%/60% 30% 70% 40%}
+.brush-shape-3{border-radius:40% 60% 50% 50%/40% 50% 60% 50%}
+.brush-shape-4{border-radius:50% 50% 40% 60%/30% 60% 40% 70%}
+/* Forme organique douce pour les grandes modales — compromis visible mais sans couper le contenu */
+.brush-shape-modal{border-radius:12% 24% 16% 20%/16% 12% 22% 14%}
+
+/* ========== RESPONSIVE MOBILE ========== */
+@media (max-width: 768px) {
+  :root {
+    --dvd-spine-width: 24px;
+    --dvd-height: 160px;
+    --dvd-cover-width: 110px;
+  }
+  .brush-shape-modal {
+    border-radius: 6% 12% 8% 10% / 8% 6% 12% 8%;
+    padding: 20px 18px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --dvd-spine-width: 22px;
+    --dvd-height: 140px;
+    --dvd-cover-width: 95px;
+  }
+}
+
+/* Désactiver les hover sur écrans tactiles */
+@media (hover: none) {
+  /* Les DVD s'ouvrent au tap, pas besoin de hover states */
+  button:hover, a:hover { transform: none !important; }
+}
+
+/* Safe area pour les téléphones avec encoche */
+@supports (padding: env(safe-area-inset-top)) {
+  .mobile-safe-top { padding-top: env(safe-area-inset-top); }
+  .mobile-safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+}
+
+/* Animations */
+@keyframes reveal { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 0.3; } }
+.animate-reveal { animation: reveal 0.5s ease-out both; }
