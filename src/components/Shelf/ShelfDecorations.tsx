@@ -383,7 +383,7 @@ export function MilleniumFalcon({ dvdHovered=false }:{dvdHovered?:boolean}) {
         <ellipse cx="32" cy="24" rx="28" ry="15" fill="url(#fg)"/><ellipse cx="32" cy="24" rx="24" ry="12" fill="#a0a0a0"/>
         <ellipse cx="32" cy="24" rx="28" ry="15" fill="none" stroke="#777" strokeWidth="0.6"/>
         {/* Panneaux */}
-        <rect x="20" cy="18" width="8" height="6" rx="1" fill="#999" x="18" y="18"/><rect x="28" y="20" width="6" height="4" rx="1" fill="#888"/>
+        <rect x="18" y="18" width="8" height="6" rx="1" fill="#999"/><rect x="28" y="20" width="6" height="4" rx="1" fill="#888"/>
         <circle cx="24" cy="20" r="4" fill="#888" stroke="#777" strokeWidth="0.5"/><circle cx="24" cy="20" r="2" fill="#999"/>
         <circle cx="38" cy="22" r="3" fill="#888" stroke="#777" strokeWidth="0.5"/>
         {/* Cockpit */}
@@ -540,7 +540,7 @@ export function CrystalBall({ dvdHovered=false }:{dvdHovered?:boolean}) {
 }
 
 // BOUGIE — grande, bougeoir doré, flamme ample permanente
-export function ScentedCandle({ dvdHovered=false }:{dvdHovered?:boolean}) {
+export function ScentedCandle({ dvdHovered: _dvdHovered=false }:{dvdHovered?:boolean}) {
   return (
     <div style={{ width: 45, height: 130, flexShrink: 0, overflow: 'visible' }}>
       <svg viewBox="0 0 70 200" style={{width:'100%',height:'100%',overflow:'visible'}}>
