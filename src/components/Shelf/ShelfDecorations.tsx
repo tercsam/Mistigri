@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const G='#828282';const GD='#6a6a6a';const GL='#9a9a9a';const CR='#F2EDE4';const PK='#E8A0A0';const PKD='#D47878';const NOSE='#E88B8B';
+const G='#828282';const GD='#6a6a6a';const GL='#9a9a9a';const CR='#F2EDE4';const PK='#E8A0A0';const NOSE='#E88B8B';
 
 // =============================================================================
 // CHAT (inchangé)
@@ -61,7 +61,7 @@ export function GiantPlant({ dvdHovered=false }:{dvdHovered?:boolean}) {
 }
 
 // Wrapper qui anime sur dvdHovered
-function D({ children, w, h, dvdHovered, anim = {} }: { children: React.ReactNode; w: number; h: number; dvdHovered: boolean; anim?: Record<string, unknown> }) {
+function D({ children, w, h, dvdHovered, anim = {} }: { children: React.ReactNode; w: number; h: number; dvdHovered: boolean; anim?: Record<string, number | number[] | string | string[]> }) {
   return <motion.div style={{ width: w, height: h, flexShrink: 0 }} animate={dvdHovered ? anim : {}} transition={{ type: 'spring', stiffness: 200, damping: 12 }}>{children}</motion.div>;
 }
 
