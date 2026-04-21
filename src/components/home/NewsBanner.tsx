@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getTrending, getNowPlaying, getUpcoming, getPosterUrl, getDetails, getProviderUrl, type TMDBDetails } from '../../services/tmdb';
 import { TMDB } from '../../utils/constants';
-import type { TMDBSearchResult, MediaType } from '../../types';
+import type { TMDBSearchResult } from '../../types';
 import { BrushStroke, PaintBlob } from '../ui/PaintSplash';
 
 type NewsTab = 'trending' | 'now_playing' | 'upcoming';
@@ -14,8 +14,7 @@ const TABS: { id: NewsTab; label: string }[] = [
 ];
 
 /** Liens de recherche vers les cinémas avec le titre du film */
-function getCinemaLinks(title: string) {
-  const q = encodeURIComponent(title);
+function getCinemaLinks(_title: string) {
   return [
     { name: 'Allociné', url: 'https://www.allocine.fr', color: '#FECC00', textColor: '#000' },
     { name: 'CGR', url: 'https://www.cgrcinemas.fr', color: '#E30613', textColor: '#fff' },
