@@ -30,20 +30,6 @@ function DecoWrapper({ children }: { children: (h: boolean) => ReactNode }) {
 }
 
 /** Objet déco avec espacement symétrique garanti */
-function DecoSlot({ children }: { children: ReactNode }) {
-  return (
-    <div style={{
-      alignSelf: 'flex-end',
-      paddingLeft: 16,
-      paddingRight: 16,
-      display: 'flex',
-      alignItems: 'flex-end',
-    }}>
-      {children}
-    </div>
-  );
-}
-
 function seeded(s: number) { return () => { s = (s * 1103515245 + 12345) & 0x7fffffff; return s / 0x7fffffff; }; }
 function chunk<T>(arr: T[], size: number): T[][] { const r: T[][] = []; for (let i = 0; i < arr.length; i += size) r.push(arr.slice(i, i + size)); return r; }
 
