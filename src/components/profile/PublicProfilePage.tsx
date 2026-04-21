@@ -125,7 +125,7 @@ export default function PublicProfilePage({ userId, onClose }: { userId: string;
                           color: selectedCol === c.id ? '#fff' : 'var(--text-secondary)',
                           transition: 'all 200ms',
                         }}>
-                        {c.name} <span style={{ fontSize: 11, opacity: 0.7 }}>({c.totalCount})</span>
+                        {c.name} <span style={{ fontSize: 11, opacity: 0.7 }}>({c.dvds.length})</span>
                       </button>
                     ))}
                   </div>
