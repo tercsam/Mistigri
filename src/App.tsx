@@ -326,7 +326,7 @@ function App() {
       <DVDDetailModal itemId={detailId} onClose={() => setDetailId(null)} />
       {showProfile && profile && user && <ProfilePage profile={profile} collections={collections} userId={user.id} onUpdateProfile={updateProfile} onUploadAvatar={uploadAvatar} onClose={() => setShowProfile(false)} onSignOut={signOut} />}
       <ShareModal collectionId={shareId} collectionName={collections.find((c) => c.id === shareId)?.name ?? ''} onClose={() => setShareId(null)} />
-      {showUserSearch && <UserSearch onClose={() => setShowUserSearch(false)} onSelectUser={(uid: string) => { setShowUserSearch(false); setPublicUserId(uid); }} />}
+      {showUserSearch && <UserSearch onClose={() => setShowUserSearch(false)} />}
       {publicUserId && <PublicProfilePage userId={publicUserId} onClose={() => setPublicUserId(null)} />}
     </div>
   );
