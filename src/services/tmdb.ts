@@ -161,7 +161,7 @@ export async function getNowPlaying(): Promise<TMDBSearchResult[]> {
  * Retourne l'URL de recherche directe vers la plateforme de streaming.
  * Chaque plateforme a son propre format d'URL de recherche.
  */
-export function getProviderUrl(providerName: string, providerId: number, title: string, fallbackLink: string | null): string {
+export function getProviderUrl(_providerName: string, providerId: number, title: string, fallbackLink: string | null): string {
   const q = encodeURIComponent(title);
   const map: Record<number, string> = {
     8:    `https://www.netflix.com/search?q=${q}`,
